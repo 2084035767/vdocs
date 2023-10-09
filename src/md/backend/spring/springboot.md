@@ -48,65 +48,63 @@ Spring Boot的自动配置是一个运行时（更准确地说，是应用程序
 
 ### 3.1 配置管理
 
-使用application.properties进行配置
+#### 使用application.properties进行配置
 
-使用application.yml进行配置
+#### 使用application.yml进行配置
 
-自定义配置文件
+#### 自定义配置文件
 
 
 
 ### 3.2 Web开发
 
-创建RESTful API
+#### 创建RESTful API
 
-处理HTTP请求和响应
+#### 处理HTTP请求和响应
 
-使用模板引擎生成动态内容
+#### 使用模板引擎生成动态内容
 
 
 
 ### 3.3 数据访问
 
-使用Spring Data JPA访问数据库
+#### 使用Spring Data JPA访问数据库
 
-配置数据源和连接池
+#### 配置数据源和连接池
 
 
 
 ### 3.4 安全性
 
-用户认证和授权
+#### 用户认证和授权
 
-使用Spring Security保护应用程序
+#### 使用Spring Security保护应用程序
 
-配置HTTPS和SSL
+#### 配置HTTPS和SSL
 
 
 
 ### 3.5 测试
 
-单元测试和集成测试
+#### 单元测试和集成测试
 
-使用Spring Boot Test进行端到端测试
+#### 使用Spring Boot Test进行端到端测试
 
 ## 四、整合功能
 
 
 
-4.1 Spring Boot 整合
+### 4.1 整合
 
-4.2 Spring Boot 整合
+### 4.2 整合
 
-4.3 Spring Boot 整合
+### 4.3 整合
 
-4.4 Spring Boot 整合
+### 4.4 整合
 
-4.5 Spring Boot 整合
+### 4.5 整合
 
 
-
-当使用Spring Boot开发应用程序时，可以整合许多常用的框架和库来提供各种功能。以下是按功能划分的一些常见框架和库：
 
 ## Web开发
 
