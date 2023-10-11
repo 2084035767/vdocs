@@ -58,7 +58,7 @@ export default navbar([
   },
   {
     text: '关于',
-    icon: 'fa-solid fa-list-check',
+    icon: 'fa-solid fa-user',
     link: '/other/',
   },
 ])

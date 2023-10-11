@@ -367,7 +367,7 @@ Thymeleaf对传递的数据进行解析
 
 ::: tip
 
-这里使用 [Thymeleaf](./Thymeleaf.md)
+这里使用 [Thymeleaf](./thymeleaf.md)
 
 :::
 
