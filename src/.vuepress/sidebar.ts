@@ -59,7 +59,8 @@ export default sidebar({
           ],
         },
         { text: 'Python', link: 'python/' },
-        { text: 'C/C++', link: 'c/' },
+        { text: 'C++', link: 'c/' },
+        { text: 'C', link: 'c/c.md' },
       ],
     },
     {
@@ -159,6 +160,6 @@ export default sidebar({
     '',
     { text: '每周计划', link: 'task.md' },
     { text: '更新日志', link: 'log.md' },
-    { text: '文档说明', link: 'function.md' },
+    { text: '文档说明', link: 'explain.md' },
   ],
 })
