@@ -128,6 +128,7 @@ export default sidebar({
         { text: '听力', link: 'listen.md' },
         { text: '写作', link: 'write.md' },
         { text: '口语', link: 'speak.md' },
+        { text: '口语', link: 'syntax.md' },
         { text: '翻译', link: 'translate.md' },
       ],
     },

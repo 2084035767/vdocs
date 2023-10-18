@@ -471,7 +471,7 @@ StudentFactory bean = (StudentFactory) context.getBean("&studentFactory");
 
 ## 三、 DI 依赖注入
 
-> 常用的注入方式主要有三种：构造方法注入（Construct注入），setter注入，基于注解的注入（接口注入）
+常用的注入方式主要有三种：构造方法注入（Construct注入），setter注入，基于注解的注入（接口注入）
 
 ### 3.1 setter方式
 

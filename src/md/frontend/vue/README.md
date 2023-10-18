@@ -11,33 +11,148 @@
 
 
 
-## 一、Vue.js 2.x 简介
+## 一、Vue 2.x 简介
 
-### 1.1 什么是 Vue.js？
+### 1.1 什么是 Vue？
 
-### 1.2 Vue.js 的历史和发展
 
-### 1.3 Vue.js 和其他前端框架的比较
+
+### 1.2 Vue 的历史和发展
+
+
+
+### 1.3 Vue 和其他前端框架的比较
+
+
 
 ## 二、基础语法
 
 ### 2.1 模板语法
 
+
+
 ### 2.2 计算属性和侦听器
+
+
 
 ### 2.3 组件基础
 
+#### 组件复用
+
+有3种方式完成组件复用
+
+- Mixin
+- HOC
+- Renderless组件
+
+### 3.6.1 Mixin
+
+#### 缺陷
+
+- 打破原有组件的封装，找个方法可能要全局搜索，可能忘记了在什么地方
+- 增加组件复杂度
+- 可能会出现命名冲突的问题
+- 仅仅只是对逻辑的复用，模版不能复用
+
+###  HOC （higher order component）高阶组件
+
+函数接受一个组件作为参数，并返回一个新组件，可复用的逻辑在函数中实现
+
+相比Mixin的优点
+
+- 模版可复用
+- 不会出现命名冲突（本质上是一个HOC是套了一层父组件） 不足
+- 组件复杂度高，多层嵌套，调试会很痛苦
+
+### RenderLess组件（推荐使用）
+
+- 复用的逻辑沉淀在包含slot插槽的组件
+- 接口由插槽Prop来暴露
+
+优点
+
+- 模版可复用
+- 不会出现命名冲突
+- 符合依赖倒置原则
+- 复用的接口来源清晰
+
+#### [#](https://js.youliaowu.com/vue/vueComponents.html#看一个示例-做一个表单验证)🍅 看一个示例（做一个
+
 ### 2.4 生命周期钩子函数
+
+### 2.5.2 生命周期
+
+- beforeCreate 最初调用触发，data和events都不能用
+- created data和events已经初始化好，data已经具有响应式；在这里可以发送请求
+- beforeMount 在模版编译之后，渲染之前触发，ssr中不可用，基本用不上这个hook
+- mounted 在渲染之后触发，并能访问组件中的DOM以及$ref,SSR中不可用
+- beforeUpdate 在数据变化后，模版改变前触发，切勿使用它监听数据变化
+- updated 在数据改变后，模版改变后触发，常用于重渲染案后的打点，性能检测或触发vue组件中非vue组件的更新
+- beforeDestroy 组件卸载前触发，可以在此时清理事件、计时器或者取消订阅操作
+- destroyed 卸载完毕后触发，可以做最后的打点或事件触发操作
 
 ## 三、组件通信
 
+Vue 组件间通信有哪几种方式？
+
+1. `props / $emit` 适用 父子组件通信
+2. `ref 与 $parent / $children /.sync` 适用 父子组件通信
+
+```html
+  <!-- 父组件 -->
+   <child :val.sync='foo'></child> 
+   <!-- 子组件可以直接改变父组件的foo变量  -->
+  this.$emit('upate:val','数据')
+```
+
+
+
+1. `EventBus （$emit / $on）` 适用于 父子、隔代、兄弟组件通信
+2. `$attrs/$listeners` 适用于 隔代组件通信（2.4.0新增）
+
 ### 3.1 父子组件通信
+
+
 
 ### 3.2 兄弟组件通信
 
+
+
 ### 3.3 跨级组件通信
 
-## 四、Vue.js 中的指令
+
+
+## 四、Vue 指令
+
+## 自定义指令
+
+```javascript
+  // 第一个参数是自定义指令的名称，第二个参数对象里面包含着钩子函数 
+    Vue.directive('test',{
+        // 只调用一次，指令第一次绑定元素的时调用
+        // 在这里可以进行一次性的初始化设置
+        bind：function (el,binding,vnode){},
+        // 被绑定元素插入父节点时调用
+         // 仅保证父节点存在，但不一定已被插入文档中
+        inserted:function(el,binding,vnode){}，
+        // 所有组件的Vnode更新时调用
+        // 但是可能发生在其子Vnode更新之前
+        // 指令的值可能发生了改变，也可能没有
+        // 但是可以通过比较更新前后的值来忽略不必要的模版更新
+        update：function（el，binding，vnode，oldVnod){},
+        // 指令所在组件的Vnode及其子VNode全部更新后调用
+        componentUpdate：function (el，binding，vnode，oldVnod){},
+        // 只调用一次，指令与元素解绑时调用
+        upbind:function (el,binding,vnode){},
+
+    })
+```
+
+
+
+
+
+
 
 ### v-text
 
@@ -231,13 +346,27 @@ ul>
 
 ## 八、Vuex 状态管理
 
+1. Vuex 适用于 父子、隔代、兄弟组件通信
+
+主要包含以下模块
+
+State：定义数据结构，设置默认的初始化状态
+
+Getter：计算属性
+
+Mutaion：在严格模式下，是更改store中状态的唯一方法
+
+Action：用于处理异步数据
+
+Module：允许将单一的store拆分多个store且同时保存在单一的状态树中
+
 ### 8.1 什么是 Vuex
 
 ### 8.2 Vuex 的核心概念
 
 ### 8.3 如何在 Vue.js 中使用 Vuex
 
-## 九、Vue.js 中的路由
+## 九、Vue 中的路由
 
 ### 9.1 什么是路由
 
