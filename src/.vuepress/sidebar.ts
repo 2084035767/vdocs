@@ -16,7 +16,8 @@ export default sidebar({
           children: [{ text: 'SASS', link: 'scss.md' }],
         },
 
-        { text: 'JavaScript', link: 'javascript/' },
+        { text: 'JavaScript', link: 'js/' },
+        { text: 'TypeScript', link: 'js/ts.md' },
         { text: 'Vue2', link: 'vue/' },
         {
           text: '参照表',
