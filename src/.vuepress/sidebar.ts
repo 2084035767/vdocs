@@ -112,7 +112,7 @@ export default sidebar({
       text: '408',
       children: [
         { text: '数据', link: 'DS.md' },
-        { text: '计组', link: 'CA.md' },
+        { text: '计组', link: 'CO.md' },
         { text: '系统', link: 'OS.md' },
         { text: '计网', link: 'CN.md' },
         { text: '算法', link: 'AL.md' },

@@ -16,7 +16,7 @@ export default hopeTheme({
   iconAssets: 'fontawesome-with-brands',
 
   //热更新
-  hotReload: true,
+  hotReload: false,
 
   logo: '/logo.svg',
   repo: 'https://github.com/2084035767/vdocs',
