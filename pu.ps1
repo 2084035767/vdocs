@@ -1,4 +1,3 @@
-# $select=""
 $select = Read-Host -Prompt "请输入操作类型：1.提交 2.更新"
 # 设置日志文件路径
 $logfile = ".\src\other\log.md"
