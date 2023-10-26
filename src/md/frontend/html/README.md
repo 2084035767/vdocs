@@ -9,21 +9,25 @@
                                             
 ```
 
-## 一、HTML5 简介
+## 一、HTML 简介
 
-### 1.1 什么是 HTML5？
+### 1.1 什么是 HTML？
+
+
+
+### 1.2 什么是 HTML5？
 
 **HTML5**是**HTML**最新的修订版本，由万维网联盟（W3C）于 2014 年 10 月完成标准制定。目标是取代 1999 年所制定的**HTML** 4.01 和**XHTML** 1.0 标准，以期能在互联网应用迅速发展的时候，使网络标准达到符合当代的网络需求。广义论及 HTML5 时，实际指的是包括 HTML、CSS 和 JavaScript 在内的一套技术组合。它希望能够减少网页浏览器对于需要插件的丰富性网络应用服务（Plug-in-Based Rich Internet Application，RIA）。
 
-### 1.2 HTML5 新特性概述
+### 1.3 HTML5 新特性概述
 
 **HTML5**添加了许多新的语法特征，其中包括`<video>`、`<audio>`和`<canvas>`元素，同时集成了`SVG`内容。这些元素是为了更容易地在网页中添加和处理多媒体和图片内容而添加的。其它新的元素如`<section>`、`<article>`、`<header>`和`<nav>`则是为了丰富文档的数据内容。新的属性的添加也是为了同样的目的。同时也有一些属性和元素被移除掉了。一些元素，像`<a>`、`<cite>`和`<menu>`被修改，重新定义或标准化了。同时 APIs 和 DOM 已经成为 HTML5 中的基础部分了。HTML5 还定义了处理非法文档的具体细节，使得所有浏览器和客户端程序能够一致地处理语法错误。
 
 
 
-## 二、HTML5 基础
+## 二、HTML 基础
 
-### 2.1 HTML5 文档结构
+### 2.1 HTML 文档结构
 
 标准模板（vscode自动生成）
 
@@ -52,7 +56,7 @@
 | `<meta>`          | 设置或说明网页的元数据，必须放在`<head>`里面。               |
 | `<!-- -->`        | 注释，浏览器会自动忽略，不会呈现在页面上。                   |
 
-### 2.2 HTML5 标签和元素
+### 2.2 HTML 标签和元素
 
 HTML5 中有许多标签和元素，用于创建网页内容，并提供各种不同的功能。
 
@@ -236,7 +240,7 @@ div和span是非常重要的标签，div的语义是division“分割”； span
 
 
 
-### 2.5 HTML5 列表、表格和框架
+### 2.5 HTML 列表、表格和框架
 
 #### 列表标签
 
@@ -438,7 +442,7 @@ dl的子元素只能是dt和dd。（dt、dd 都是容器级标签）
 
 
 
-### 2.4 HTML5 全局属性
+### 2.4 HTML 全局属性
 
 HTML5 全局属性是可以应用于所有 HTML 元素的属性。这些属性提供了一些通用的功能和行为，可以在任何元素上使用。
 
@@ -461,7 +465,7 @@ HTML5 全局属性是可以应用于所有 HTML 元素的属性。这些属性�
 
 
 
-### 2.5 HTML5 表单
+### 2.5 HTML 表单
 
 #### 表单
 
@@ -768,6 +772,12 @@ HTML5通过`<audio>`标签来解决音频播放的问题。
 
 
 
+
+
+**以下暂无更新计划**
+
+----
+
 ### 3.3 Canvas 绘图
 
 Canvas 是 HTML5 中用于绘制图形的 API，它可以轻松地创建复杂的动画和交互式应用程序，同时还可以与其他 Web 技术进行集成。
@@ -808,8 +818,8 @@ WebRTC（Web Real-Time Communications）是一种新的技术，可以在浏览�
 
 
 
-## 五、参考三三：
+## 参考三三
 
-- [HTML | 千古前端图文教程](https://web.qianguyihao.com/01-HTML/01-%E8%AE%A4%E8%AF%86Web%E5%92%8CWeb%E6%A0%87%E5%87%86.html#web%E3%80%81%E7%BD%91%E9%A1%B5%E3%80%81%E6%B5%8F%E8%A7%88%E5%99%A8)
-- [HTML | 网道](https://wangdoc.com/html/)
-- [HTML | 菜鸟教程](https://www.runoob.com/html/html-tutorial.html)
+- [HTML |千古前端图文教程](https://web.qianguyihao.com/01-HTML/01-%E8%AE%A4%E8%AF%86Web%E5%92%8CWeb%E6%A0%87%E5%87%86.html#web%E3%80%81%E7%BD%91%E9%A1%B5%E3%80%81%E6%B5%8F%E8%A7%88%E5%99%A8)
+- [HTML |网道](https://wangdoc.com/html/)
+- [HTML |菜鸟教程](https://www.runoob.com/html/html-tutorial.html)

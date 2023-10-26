@@ -2,10 +2,14 @@
 
 **这里涉及**ʕ·ᴥ·ʔ
 
-- HTML5
-- CSS3
+- HTML
+- CSS
   - Sass
-
+  - Unocss
 - JavaScript
+  - ES6
+
+- TypeScript
+
 - Node.js
   - Express

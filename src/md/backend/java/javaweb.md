@@ -1014,9 +1014,3 @@ PreparedStatement 接口常用方法
 ### 6.3 XSS 和 CSRF 防护
 
 ## 七、RESTful API 设计
-
-### 7.1 RESTful API 概述
-
-### 7.2 设计 RESTful API 的最佳实践
-
-### 7.3 使用框架（如 Spring Boot）实现 RESTful API

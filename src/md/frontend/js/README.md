@@ -2097,7 +2097,7 @@ Date 对象 有如下方法，可以获取日期和时间：
 
 
 
-## 八、参考三三
+## 参考三三
 
 - [JS |不凡学院](http://doc.bufanui.com/docs/html-css/html-css-1edq8db77o0f4)
 - [JS |后盾人](https://doc.houdunren.com/%E7%B3%BB%E7%BB%9F%E8%AF%BE%E7%A8%8B/js/1%20%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.html)

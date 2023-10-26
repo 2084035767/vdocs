@@ -9,9 +9,9 @@
                                  
 ```
 
-## 一、CSS3 简介
+## 一、CSS 简介
 
-### 1.1 什么是 CSS3？
+### 1.1 什么是 CSS？
 
 CSS 是 Cascading Style Sheet（层叠样式表）的缩写。是用于（增强）控制网页样式并允许将样式信息与网页内容分离的一种标记性语言。CSS 不需要编译,可以直接由浏览器执行(属于浏览器解释型语言)。
 
@@ -19,7 +19,7 @@ CSS 是 Cascading Style Sheet（层叠样式表）的缩写。是用于（增强
 
 
 
-## 二、CSS3 基础知识
+## 二、CSS 基础知识
 
 ### 2.1 铺垫知识
 
@@ -148,7 +148,7 @@ css的注释是`/*...*/`,请记住css没有`//`注释。
 
 
 
-### 2.2 CSS3 文本
+### 2.2 CSS 文本
 
 #### 字体属性
 
@@ -253,7 +253,7 @@ ul
 
 
 
-### 2.3 CSS3 颜色
+### 2.3 CSS 颜色
 
 css常用的颜色类型有三种。
 
@@ -330,7 +330,7 @@ RGBA颜色：`rgba(r, g, b, a)`（红，绿，蓝，alpha）。 Alpha参数是�
 
 
 
-### 2.4 CSS3 背景
+### 2.4 CSS 背景
 
 #### 背景属性
 
@@ -430,7 +430,7 @@ CSS Sprites(图片整合技术) 的目的就是通过整合图片，减少对服
 
 
 
-## 三、CSS3 选择器
+## 三、CSS 选择器
 
 选择器决定了样式规则对哪些元素有效。
 
@@ -727,9 +727,9 @@ ul li:last-child{
 
 
 
-## 三、CSS3 盒模型
+## 三、CSS 盒模型
 
-### 3.1 CSS3 盒模型
+### 3.1 CSS 盒模型
 
 #### 盒子模型
 
@@ -1185,7 +1185,9 @@ div{
 
 
 
+**以下暂无更新计划**
 
+----
 
 ### 5.2 CSS3 动画
 
@@ -1217,8 +1219,8 @@ div{
 
 ### 8.3 CSS3 性能优化
 
-## 九、参考三三
+## 参考三三
 
-- [css | 千古前端图文教程](https://web.qianguyihao.com/02-CSS%E5%9F%BA%E7%A1%80/01-CSS%E5%B1%9E%E6%80%A7%EF%BC%9A%E5%AD%97%E4%BD%93%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%87%E6%9C%AC%E5%B1%9E%E6%80%A7.html)
-- [css | 后盾人](https://doc.houdunren.com/%E7%B3%BB%E7%BB%9F%E8%AF%BE%E7%A8%8B/css/1%20%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.html#%E6%A0%B7%E5%BC%8F%E5%A3%B0%E6%98%8E)
-- [css | 菜鸟教程](https://www.runoob.com/css/css-tutorial.html)
+- [css |千古前端图文教程](https://web.qianguyihao.com/02-CSS%E5%9F%BA%E7%A1%80/01-CSS%E5%B1%9E%E6%80%A7%EF%BC%9A%E5%AD%97%E4%BD%93%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%87%E6%9C%AC%E5%B1%9E%E6%80%A7.html)
+- [css |后盾人](https://doc.houdunren.com/%E7%B3%BB%E7%BB%9F%E8%AF%BE%E7%A8%8B/css/1%20%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.html#%E6%A0%B7%E5%BC%8F%E5%A3%B0%E6%98%8E)
+- [css |菜鸟教程](https://www.runoob.com/css/css-tutorial.html)
