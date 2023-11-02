@@ -1,4 +1,8 @@
-# 什么是 UnoCSS？[](https://alfred-skyblue.github.io/unocss-docs-cn/guide/#什么是-unocss)
+# UnoCSS
+
+
+
+## 什么是 UnoCSS？
 
 UnoCSS 是一个即时的原子化 CSS 引擎，旨在灵活和可扩展。核心是不拘一格的，所有的 CSS 工具类都是通过预设提供的。
 
@@ -67,7 +71,7 @@ css
 }
 ```
 
-## 预设[](https://alfred-skyblue.github.io/unocss-docs-cn/guide/#预设)
+## 预设
 
 一旦您创建了一些规则，您可以将它们提取到一个预设中，并与他人分享。例如，您可以为您公司的设计系统创建一个预设，并与您的团队共享。
 
@@ -111,11 +115,11 @@ export default defineConfig({
 
 
 
-# 快捷方式[](https://alfred-skyblue.github.io/unocss-docs-cn/config/shortcuts#快捷方式)
+# 快捷方式
 
 快捷方式可以让您将多个规则组合成单个简写，受到[Windi CSS](https://windicss.org/features/shortcuts.html)的启发。
 
-## 使用[](https://alfred-skyblue.github.io/unocss-docs-cn/config/shortcuts#使用)
+## 使用
 
 ts
 
@@ -175,13 +179,13 @@ css
 }
 ```
 
-# 属性化预设[](https://alfred-skyblue.github.io/unocss-docs-cn/presets/attributify#属性化预设)
+# 属性化预设
 
 这个预设可以为其他预设启用 [`attributify` 模式](https://alfred-skyblue.github.io/unocss-docs-cn/presets/attributify#属性化模式)。
 
 [源码](https://github.com/unocss/unocss/tree/main/packages/preset-attributify)
 
-## 安装[](https://alfred-skyblue.github.io/unocss-docs-cn/presets/attributify#安装)
+## 安装
 
 pnpmyarnnpm
 
@@ -217,7 +221,7 @@ ts
 import { presetAttributify } from 'unocss'
 ```
 
-## 属性化模式[](https://alfred-skyblue.github.io/unocss-docs-cn/presets/attributify#属性化模式)
+## 属性化模式
 
 假设你有一个使用 Tailwind 工具类的按钮。当列表变得越来越长时，它变得很难阅读和维护。
 
@@ -249,7 +253,7 @@ html
 
 例如，`text-sm text-white` 可以合并为 `text="sm white"`，而无需重复相同的前缀。
 
-## 前缀自引用[](https://alfred-skyblue.github.io/unocss-docs-cn/presets/attributify#前缀自引用)
+## 前缀自引用
 
 对于具有与前缀相同的工具类（如 `flex`、`grid`、`border`）的工具类，提供了一个特殊的 ~ 值。
 
@@ -269,7 +273,7 @@ html
 <button border="~ red">Button</button>
 ```
 
-## 无值属性[](https://alfred-skyblue.github.io/unocss-docs-cn/presets/attributify#无值属性)
+## 无值属性
 
 除了 Windi CSS 的属性化模式外，这个预设还支持无值属性。
 
@@ -293,7 +297,7 @@ INFO
 
 注意：如果您使用的是 JSX，`<div foo>` 可能会转换为 `<div foo={true}>`，这将使从 UnoCSS 生成的 CSS 无法匹配属性。要解决此问题，您可能需要尝试 [`transformer-attributify-jsx`](https://github.com/unocss/unocss/tree/main/packages/transformer-attributify-jsx)以及此预设。
 
-## 属性冲突[](https://alfred-skyblue.github.io/unocss-docs-cn/presets/attributify#属性冲突)
+## 属性冲突
 
 如果属性名称与元素或组件的属性名称发生冲突，您可以在属性名称前添加 `un-` 前缀以指定为 UnoCSS 的属性模式。
 
@@ -331,11 +335,11 @@ presetAttributify({
 })
 ```
 
-# 变体组转换器[](https://alfred-skyblue.github.io/unocss-docs-cn/transformers/variant-group#变体组转换器)
+# 变体组转换器
 
 为 UnoCSS 启用 Windi CSS 的 [变体组特性](https://windicss.org/features/variant-groups.html)。
 
-## 安装[](https://alfred-skyblue.github.io/unocss-docs-cn/transformers/variant-group#安装)
+## 安装
 
 pnpmyarnnpm
 
@@ -360,7 +364,7 @@ export default defineConfig({
 })
 ```
 
-## 使用方法[](https://alfred-skyblue.github.io/unocss-docs-cn/transformers/variant-group#使用方法)
+## 使用方法
 
 html
 
@@ -376,11 +380,11 @@ html
 <div class="hover:bg-gray-400 hover:font-medium font-light font-mono"/>
 ```
 
-# 指令转换器[](https://alfred-skyblue.github.io/unocss-docs-cn/transformers/directives#指令转换器)
+# 指令转换器
 
 `@unocss/transformer-directives` 是 UnoCSS 的指令转换器，支持 `@apply`、`@screen` 和 `theme()` 指令。
 
-## 安装[](https://alfred-skyblue.github.io/unocss-docs-cn/transformers/directives#安装)
+## 安装
 
 pnpmyarnnpm
 
@@ -405,9 +409,9 @@ export default defineConfig({
 })
 ```
 
-## 使用[](https://alfred-skyblue.github.io/unocss-docs-cn/transformers/directives#使用)
+## 使用
 
-### `@apply`[](https://alfred-skyblue.github.io/unocss-docs-cn/transformers/directives#apply)
+### `@apply`
 
 css
 
@@ -430,7 +434,7 @@ css
 }
 ```
 
-#### `--at-apply`[](https://alfred-skyblue.github.io/unocss-docs-cn/transformers/directives#at-apply)
+#### `--at-apply`
 
 为了与普通的 CSS 兼容，你可以使用 CSS 变量来替换 `@apply` 指令：
 
@@ -465,7 +469,7 @@ transformerDirectives({
 })
 ```
 
-### `@screen`[](https://alfred-skyblue.github.io/unocss-docs-cn/transformers/directives#screen)
+### `@screen`
 
 `@screen`指令允许您创建媒体查询，通过名称引用断点，其来自于[`theme.breakpoints`](https://alfred-skyblue.github.io/unocss-docs-cn/config/theme)。
 
@@ -510,11 +514,11 @@ css
 /* ... */
 ```
 
-#### 支持断点变体[](https://alfred-skyblue.github.io/unocss-docs-cn/transformers/directives#支持断点变体)
+#### 支持断点变体
 
 `@screen`还支持`lt`、`at`变体：
 
-#### `@screen lt-`[](https://alfred-skyblue.github.io/unocss-docs-cn/transformers/directives#screen-lt)
+#### `@screen lt-`
 
 css
 
@@ -557,7 +561,7 @@ css
 /* ... */
 ```
 
-#### `@screen at-`[](https://alfred-skyblue.github.io/unocss-docs-cn/transformers/directives#screen-at)
+#### `@screen at-`
 
 css
 
@@ -610,7 +614,7 @@ css
 /* ... */
 ```
 
-### `theme()`[](https://alfred-skyblue.github.io/unocss-docs-cn/transformers/directives#theme)
+### `theme()`
 
 使用`theme()`函数通过点符号访问您的主题配置值。
 
@@ -632,13 +636,13 @@ css
 }
 ```
 
-## License[](https://alfred-skyblue.github.io/unocss-docs-cn/transformers/directives#license)
+## License
 
-# 编译类转换器[](https://alfred-skyblue.github.io/unocss-docs-cn/transformers/compile-class#编译类转换器)
+# 编译类转换器
 
 将一组类编译成一个类。灵感来自于Windi CSS的[编译模式](https://windicss.org/posts/modes.html#compilation-mode)以及[@UltraCakeBakery](https://github.com/UltraCakeBakery)的[issue #948](https://github.com/unocss/unocss/issues/948)。
 
-## 安装[](https://alfred-skyblue.github.io/unocss-docs-cn/transformers/compile-class#安装)
+## 安装
 
 pnpmyarnnpm
 
@@ -663,7 +667,7 @@ export default defineConfig({
 })
 ```
 
-## 用法[](https://alfred-skyblue.github.io/unocss-docs-cn/transformers/compile-class#用法)
+## 用法
 
 在类字符串的开头添加 `:uno:`，以将它们标记为编译对象。
 
@@ -709,15 +713,15 @@ css
 }
 ```
 
-## 选项[](https://alfred-skyblue.github.io/unocss-docs-cn/transformers/compile-class#选项)
+## 选项
 
 您可以使用选项配置编译类的触发字符串和前缀。有关详细信息，请参考[类型](https://github.com/antfu/unocss/blob/main/packages/transformer-compile-class/src/index.ts#L4)。
 
-# Inspector[](https://alfred-skyblue.github.io/unocss-docs-cn/tools/inspector#inspector)
+# Inspector
 
 UnoCSS (@unocss/inspector) 的检查器 UI。 包含在 `unocss` 和 `@unocss/vite` 中。
 
-## 用法[](https://alfred-skyblue.github.io/unocss-docs-cn/tools/inspector#用法)
+## 用法
 
 在 Vite 开发服务器中访问 [localhost:3000/__unocss](http://localhost:3000/__unocss) 来查看检查器。
 

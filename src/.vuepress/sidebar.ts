@@ -60,8 +60,7 @@ export default sidebar({
           ],
         },
         { text: 'Python', link: 'python/' },
-        { text: 'C++', link: 'c/' },
-        { text: 'C', link: 'c/c.md' },
+        { text: 'C', link: 'c/' },
       ],
     },
     {
