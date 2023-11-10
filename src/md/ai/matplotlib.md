@@ -1,14 +1,14 @@
 ## Matplotlib数据可视化
 
-### 第一部分 课程介绍
+### 一、课程介绍
 
 而在可视化中，Matplotlib算得上是最常用的工具。Matplotlib 是 python 最著名的绘图库，它提供了一整套 API， 十分适合绘制图表，或修改图表的一些属性，如字体、标签、范围等
 
 Matplotlib 是一个 Python 的 2D 绘图库，它交互式环境生成出版质量级别的图形。通过 Matplotlib这个标准类库， 开发者只需要几行代码就可以实现生成绘图，折线图、散点图、柱状图、饼图、直方图、组合图等数据分析可视化图 表。
 
-### 第二部分 基础知识
+### 二、基础知识
 
-#### 第一节 图形绘制
+#### 图形绘制
 
 ```python
 import numpy as np
@@ -32,7 +32,7 @@ plt.xlim([-1,10])
 plt.ylim([-1.5,1.5])
 ```
 
-#### 第二节 坐标轴刻度、标签、标题
+#### 坐标轴刻度、标签、标题
 
 ```python
 import numpy as np
@@ -66,7 +66,7 @@ plt.rcParams['font.sans-serif'] = 'Songti SC' # 设置宋体，显示中文
 plt.title('正弦波')
 ```
 
-#### 第三节 图例
+#### 图例
 
 ```python
 import numpy as np
@@ -86,7 +86,7 @@ plt.legend(['Sin','Cos'],fontsize = 18,loc = 'center',ncol = 2,bbox_to_anchor =
 
 ```
 
-#### 第四节 脊柱移动
+#### 脊柱移动
 
 ```python
 import numpy as np
@@ -108,7 +108,7 @@ _ = plt.xticks([-np.pi,-np.pi/2,np.pi/2,np.pi],
                fontsize = 18)
 ```
 
-#### 第五节 图片保存
+#### 图片保存
 
 ```python
 import numpy as np
@@ -133,9 +133,9 @@ plt.savefig('./基础5.png', # 文件名：png、jpg、pdf
             bbox_inches = 'tight')# 保存图片完整
 ```
 
-### 第三部分 风格和样式
+### 三、风格和样式
 
-#### 第一节 颜色、线形、点形、线宽、透明度
+#### 颜色、线形、点形、线宽、透明度
 
 ```python
 import numpy as np
@@ -151,7 +151,7 @@ plt.plot(x,y1 + 2*y2,linewidth = 3,alpha = 0.7,color = 'orange') # 线宽、透�
 plt.plot(x,2*y1 - y2,'bo--') # 参数连用
 ```
 
-#### 第二节 更多属性设置
+#### 更多属性设置
 
 ```python
 import numpy as np
@@ -173,9 +173,9 @@ plt.xticks(size = 18) # 设置刻度大小
 plt.yticks(size = 18)
 ```
 
-### 第四部分 多图布局
+### 四、多图布局
 
-#### 第一节 子视图
+#### 子视图
 
 ```python
 import numpy as np
@@ -184,24 +184,24 @@ x = np.linspace(-np.pi,np.pi,50)
 y = np.sin(x)
 # 子视图1
 plt.figure(figsize=(9,6))
-ax = plt.subplot(221) # 两行两列第一个子视图
+ax = plt.subplot(221) # 两行两列一个子视图
 ax.plot(x,y,color = 'red')
 ax.set_facecolor('green') # 调用子视图设置方法，设置子视图整体属性
 # 子视图2
-ax = plt.subplot(2,2,2) # 两行两列第二个子视图
+ax = plt.subplot(2,2,2) # 两行两列二个子视图
 line, = ax.plot(x,-y) # 返回绘制对象
 line.set_marker('*') # 调用对象设置方法，设置属性
 line.set_markerfacecolor('red')
 line.set_markeredgecolor('green')
 line.set_markersize(10)
 # 子视图3
-ax = plt.subplot(2,1,2) # 两行一列第二行视图
+ax = plt.subplot(2,1,2) # 两行一列二行视图
 plt.sca(ax) # 设置当前视图
 x = np.linspace(-np.pi,np.pi,200)
 plt.plot(x,np.sin(x*x),color = 'red')
 ```
 
-#### 第二节 嵌套
+#### 嵌套
 
 ```python
 import numpy as np
@@ -218,7 +218,7 @@ ax = fig.add_axes([0.55,0.2,0.3,0.3]) # 使用视图对象添加子视图
 ax.plot(x,y,color = 'r')
 ```
 
-#### 第三节 多图布局分格显示
+#### 多图布局分格显示
 
 3.3.1 均匀布局
 
@@ -325,13 +325,13 @@ ax1.set_title('ax1_title') # 设置小图的标题
 ax2 = plt.subplot(gs[1, :2]) # 模块调用
 ax2.set_facecolor('green')
 ax2.plot(x,np.cos(x),color = 'red')
-# 从第一行到最后，占1、2两行，后面的2表示只占用第二列，也就是最后的一列
+# 从一行到最后，占1、2两行，后面的2表示只占用二列，也就是最后的一列
 ax3 = plt.subplot(gs[1:, 2])
 ax3.plot(x,np.sin(x) + np.cos(x))
-# 倒数第一行，只占第0列这一列
+# 倒数一行，只占0列这一列
 ax4 = plt.subplot(gs[-1, 0])
 ax4.plot([1,3],[2,4])
-# 倒数第一行，只占倒数第二列，由于总共三列，所以倒数第二列就是序号1的列
+# 倒数一行，只占倒数二列，由于总共三列，所以倒数二列就是序号1的列
 ax5 = plt.subplot(gs[-1, -2])
 ax5.scatter([1,2,3], [0,2, 4])
 ax5.set_xlabel('ax5_x',fontsize = 12)
@@ -339,7 +339,7 @@ ax5.set_ylabel('ax5_y',fontsize = 12)
 plt.show()
 ```
 
-#### 第四节 双轴显示
+#### 双轴显示
 
 ```python
 import numpy as np
@@ -361,7 +361,7 @@ ax2.tick_params(axis='y', labelcolor='blue')
 plt.tight_layout() # 紧凑布局
 ```
 
-### 第五部分 文本、注释、箭头
+### 五、文本、注释、箭头
 
 | Pyplot函数 | API方法                      | 描述                           |
 | ---------- | ---------------------------- | ------------------------------ |
@@ -374,7 +374,7 @@ plt.tight_layout() # 紧凑布局
 | figtext()  | mpl.figure.Figure.text()     | 在Figure对象的任意位置添加文字 |
 | suptitle() | mpl.figure.Figure.suptitle() | 为Figure对象添加中心化的标题   |
 
-#### 第一节 文本
+#### 文本
 
 ```python
 import numpy as np
@@ -398,7 +398,7 @@ plt.show()
 
 ```
 
-#### 第二节 箭头
+#### 箭头
 
 ```python
 import matplotlib.pyplot as plt
@@ -422,7 +422,7 @@ for i in range(0, len(way)-1):
 
 ```
 
-#### 第三节 注释
+#### 注释
 
 ```python
 import numpy as np
@@ -451,7 +451,7 @@ ax.annotate('median',
 ax.set_ylim(-2, 2)
 ```
 
-#### 第四节 注释箭头连接形状
+#### 注释箭头连接形状
 
 ```python
 import matplotlib.pyplot as plt
@@ -491,9 +491,9 @@ def annotate_con_style(ax, connectionstyle):
         fig.tight_layout(pad=0.2)
 ```
 
-### 第六部分 常用视图
+### 六、常用视图
 
-#### 第一节 折线图
+#### 折线图
 
 ```python
 import numpy as np
@@ -511,7 +511,7 @@ axs[0].plot(x,marker = '*',color = 'red')
 axs[1].plot(x.cumsum(),marker = 'o')
 ```
 
-#### 第二节 柱状图
+#### 柱状图
 
 ```python
 import numpy as np
@@ -566,7 +566,7 @@ def set_label(rects):
         plt.savefig('./分组带标签柱状图.png')
 ```
 
-#### 第三节 极坐标图
+#### 极坐标图
 
 极坐标线形图
 
@@ -597,7 +597,7 @@ ax = plt.subplot(111, projection='polar') # polar表示极坐标
 ax.bar(theta, radii, width=width, bottom=0.0,color = colors)
 ```
 
-#### 第四节 直方图
+#### 直方图
 
 ```python
 import numpy as np
@@ -619,7 +619,7 @@ fig.tight_layout()
 plt.savefig('./直方图.png')
 ```
 
-#### 第五节 箱形图
+#### 箱形图
 
 ```python
 import numpy as np
@@ -630,7 +630,7 @@ lables = ['A','B','C','D']
 plt.boxplot(data,1,'gD',labels=lables) # 红色的圆点是异常值
 ```
 
-#### 第六节 散点图
+#### 散点图
 
 散点图的英文叫做 scatter plot，它将两个变量的值显示在二维坐标中，非常适合展示两个变量之间的关系
 
@@ -647,7 +647,7 @@ plt.scatter(data[:,0], # 横坐标
             alpha = 0.5) # 透明度
 ```
 
-#### 第六节 饼图
+#### 饼图
 
 一般饼图
 
@@ -732,7 +732,7 @@ for i, p in enumerate(wedges):
     plt.tight_layout()
 ```
 
-#### 第七节 热力图
+#### 热力图
 
 ```python
 import numpy as np
@@ -757,7 +757,7 @@ for i in range(len(vegetables)):
         plt.savefig('./热力图.png')
 ```
 
-#### 第八节 面积图
+#### 面积图
 
 ```python
 import matplotlib.pyplot as plt
@@ -774,7 +774,7 @@ plt.title('Stack Plot',fontsize = 18)
 plt.legend(['Sleeping','Eating','Working','Playing'],fontsize = 18)
 ```
 
-#### 第九节 蜘蛛图
+#### 蜘蛛图
 
 ```python
 import numpy as np
@@ -798,9 +798,9 @@ ax.set_thetagrids(angles*180/np.pi,#角度值
 ax.set_rgrids([20,40,60,80],fontsize = 18)
 ```
 
-### 第七部分 3D图形
+### 七、3D图形
 
-#### 第一节 三维折线图散点图
+#### 三维折线图散点图
 
 ```python
 import numpy as np
@@ -817,7 +817,7 @@ ax3.scatter(np.random.rand(50)*60,np.random.rand(50),np.random.rand(50),
             color = 'red',s = 100)
 ```
 
-#### 第二节 三维柱状图
+#### 三维柱状图
 
 ```python
 import numpy as np

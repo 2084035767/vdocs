@@ -19,7 +19,7 @@ export default hopeTheme({
   hotReload: false,
 
   logo: '/logo.svg',
-  repo: 'https://github.com/2084035767/vdocs',
+  // repo: 'https://github.com/2084035767/vdocs',
 
   docsDir: 'src',
 

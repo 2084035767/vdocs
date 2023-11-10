@@ -14,6 +14,7 @@
 ## 第三章:线性数据结构
 ### 3.1 数组 (Array)
 ### 3.2 链表 (Linked List)
+
 ### 3.3 栈 (Stack)
 ### 3.4 队列 (Queue)
 
@@ -25,14 +26,20 @@
 ### 4.5 B树 (B-Tree)
 ### 4.6 红黑树 (Red-Black Tree)
 
-## 第五章:图形数据结构
-### 5.1 图 (Graph)
-### 5.2 有向图 (Directed Graph)
-### 5.3 无向图 (Undirected Graph)
-### 5.4 最短路径算法 (Shortest Path Algorithms)
-### 5.5 最小生成树算法 (Minimum Spanning Tree Algorithms)
+ <!--第五章:图形数据结构-->
+
+### <!--5.1 图 (Graph)-->
+
+### <!--5.2 有向图 (Directed Graph)-->
+
+### <!--5.3 无向图 (Undirected Graph)-->
+
+### <!--5.4 最短路径算法 (Shortest Path Algorithms)-->
+
+### <!--5.5 最小生成树算法 (Minimum Spanning Tree Algorithms)-->
 
 ## 第六章:散列数据结构
+
 ### 6.1 哈希表 (Hash Table)
 ### 6.2 散列函数 (Hash Function)
 ### 6.3 冲突解决方法
@@ -47,5 +54,3 @@
 ### 7.6 AVL树
 ### 7.7 树状数组 (Fenwick Tree)
 ### 7.8 线段树 (Segment Tree)
-
-

@@ -61,6 +61,7 @@ export default sidebar({
         },
         { text: 'Python', link: 'python/' },
         { text: 'C', link: 'c/' },
+        { text: 'Rust', link: 'rust/' },
       ],
     },
     {
@@ -98,9 +99,15 @@ export default sidebar({
     {
       text: '人工智能',
       children: [
-        { text: 'Numpy', link: 'numpy.md' },
-        { text: 'Pandas', link: 'pandas.md' },
-        { text: 'Matplotlib', link: 'matplotlib.md' },
+        {
+          text: '数据分析',
+          collapsible: true,
+          children: [
+            { text: 'Numpy', link: 'numpy.md' },
+            { text: 'Pandas', link: 'pandas.md' },
+            { text: 'Matplotlib', link: 'matplotlib.md' },
+          ],
+        },
         { text: 'OpenCV', link: 'opencv.md' },
       ],
     },

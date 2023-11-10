@@ -28,7 +28,7 @@ features:
 
   - title: 分享交流
     icon: fas fa-share-alt
-    details: 在记录与分享的过程中, 梳理所学, 交流所得, 必有所获。
+    details: 在记录与分享的过程中，梳理所学，交流所得，必有所获。
 
   - title: 体系构建    
     icon: fas fa-cubes
