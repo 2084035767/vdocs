@@ -157,6 +157,17 @@ Python3 中常见的数据类型有：
 
 
 
+序列
+
+String（字符串）
+
+- List（列表）
+- Tuple（元组）
+
+
+
+
+
 Python3 的六个标准数据类型中：
 
 - **不可变数据（3 个）：**Number（数字）、String（字符串）、Tuple（元组）；

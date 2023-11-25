@@ -398,9 +398,9 @@ http 模块是 Node.js 官方提供的、用来创建 web 服务器的模块。�
 
 ## 三、Express 框架
 
-## 五、高级应用
+## 四、高级应用
 
-### 5.1 实现 RESTful API
+### 4.1 实现 RESTful API
 
 ### 创建最基本的 web 服务器
 
