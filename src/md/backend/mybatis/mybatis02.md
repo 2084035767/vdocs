@@ -2,7 +2,7 @@
 
 ## 2.1 入门程序
 
-### 创建maven工程
+### 创建 maven 工程
 
 
 
@@ -32,13 +32,13 @@
 
 
 
-### 创建MyBatis的核心配置文件
+### 创建 MyBatis 的核心配置文件
 
-创建一个mybatis-config.xml
+创建一个 mybatis-config.xml
 
-> 习惯上命名为`mybatis-config.xml`，这个文件名仅仅只是建议，并非强制要求。将来整合Spring之后，这个配置文件可以省略，所以大家操作时可以直接复制、粘贴。
-> 核心配置文件主要用于配置连接数据库的环境以及MyBatis的全局配置信息
-> 核心配置文件存放的位置是src/main/resources目录下
+> 习惯上命名为 `mybatis-config.xml`，这个文件名仅仅只是建议，并非强制要求。将来整合 Spring 之后，这个配置文件可以省略，所以大家操作时可以直接复制、粘贴。
+> 核心配置文件主要用于配置连接数据库的环境以及 MyBatis 的全局配置信息
+> 核心配置文件存放的位置是 src/main/resources 目录下
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -79,11 +79,11 @@ public class User {
 
 
 
-### 创建Mapper接口
+### 创建 Mapper 接口
 
-创建一个UserMapper.xml
+创建一个 UserMapper.xml
 
-> MyBatis中的mapper接口相当于以前的dao。但是区别在于，mapper仅仅是接口，我们不需要提供实现类
+> MyBatis 中的 mapper 接口相当于以前的 dao。但是区别在于，mapper 仅仅是接口，我们不需要提供实现类
 
 ```java
 package com.atguigu.mybatis.mapper;  
@@ -96,7 +96,7 @@ public interface UserMapper {
 }
 ```
 
-**命名解析：**为了减少输入量，MyBatis 对所有具有名称的配置元素（包括语句，结果映射，缓存等）使用了如下的命名解析规则。
+**命名解析：** 为了减少输入量，MyBatis 对所有具有名称的配置元素（包括语句，结果映射，缓存等）使用了如下的命名解析规则。
 
 - 全限定名（比如 “com.mypackage.MyMapper.selectAllThings）将被直接用于查找及使用。
 - 短名称（比如 “selectAllThings”）如果全局唯一也可以作为一个单独的引用。 如果不唯一，有两个或两个以上的相同名称（比如 “com.foo.selectAllThings” 和 “com.bar.selectAllThings”），那么使用时就会产生“短名称不唯一”的错误，这种情况下就必须使用全限定名。
@@ -119,14 +119,14 @@ resultType：结果类型
 </mapper>
 ```
 
-### 创建MyBatis的映射文件
+### 创建 MyBatis 的映射文件
 
 - 相关概念：ORM（Object Relationship Mapping）对象关系映射。  
- - 对象：Java的实体类对象  
+ - 对象：Java 的实体类对象  
    - 关系：关系型数据库  
    - 映射：二者之间的对应关系
 
-| Java概念 | 数据库概念 |
+| Java 概念 | 数据库概念 |
 | -------- | ---------- |
 | 类       | 表         |
 | 属性     | 字段/列    |
@@ -134,13 +134,13 @@ resultType：结果类型
 
 - 映射文件的命名规则
  - 表所对应的实体类的类名+Mapper.xml
-   - 例如：表t_user，映射的实体类为User，所对应的映射文件为UserMapper.xml 
+   - 例如：表 t_user，映射的实体类为 User，所对应的映射文件为 UserMapper.xml 
    - 因此一个映射文件对应一个实体类，对应一张表的操作
-   - MyBatis映射文件用于编写SQL，访问以及操作表中的数据
-   - MyBatis映射文件存放的位置是src/main/resources/mappers目录下
-- MyBatis中可以面向接口操作数据，要保证两个一致
- - mapper接口的全类名和映射文件的命名空间（namespace）保持一致
-   - mapper接口中方法的方法名和映射文件中编写SQL的标签的id属性保持一致
+   - MyBatis 映射文件用于编写 SQL，访问以及操作表中的数据
+   - MyBatis 映射文件存放的位置是 src/main/resources/mappers 目录下
+- MyBatis 中可以面向接口操作数据，要保证两个一致
+ - mapper 接口的全类名和映射文件的命名空间（namespace）保持一致
+   - mapper 接口中方法的方法名和映射文件中编写 SQL 的标签的 id 属性保持一致
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>  
@@ -155,12 +155,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 </mapper>
 ```
 
-### 通过junit测试功能
+### 通过 junit 测试功能
 
-- SqlSession：代表Java程序和数据库之间的会话。（HttpSession是Java程序和浏览器之间的会话）
-- SqlSessionFactory：是“生产”SqlSession的“工厂”
+- SqlSession：代表 Java 程序和数据库之间的会话。（HttpSession 是 Java 程序和浏览器之间的会话）
+- SqlSessionFactory：是“生产”SqlSession 的“工厂”
 - 工厂模式：如果创建某一个对象，使用的过程基本固定，那么我们就可以把创建这个对象的相关代码封装到一个“工厂类”中，以后都使用这个工厂类来“生产”我们需要的对象
-- 此时需要手动提交事务，如果要自动提交事务，则在获取sqlSession对象时，使用`SqlSession sqlSession = sqlSessionFactory.openSession(true);`，传入一个Boolean类型的参数，值为true，这样就可以自动提交
+- 此时需要手动提交事务，如果要自动提交事务，则在获取 sqlSession 对象时，使用 `SqlSession sqlSession = sqlSessionFactory.openSession(true);`，传入一个 Boolean 类型的参数，值为 true，这样就可以自动提交
 
 ```java
 public class UserMapperTest {
@@ -191,8 +191,8 @@ public class UserMapperTest {
 
 ## 2.2 核心配置文件详解
 
->核心配置文件中的标签必须按照固定的顺序(有的标签可以不写，但顺序一定不能乱)：
->properties、settings、typeAliases、typeHandlers、objectFactory、objectWrapperFactory、reflectorFactory、plugins、environments、databaseIdProvider、mappers
+> 核心配置文件中的标签必须按照固定的顺序(有的标签可以不写，但顺序一定不能乱)：
+> properties、settings、typeAliases、typeHandlers、objectFactory、objectWrapperFactory、reflectorFactory、plugins、environments、databaseIdProvider、mappers
 
 | 标签                                 | 作用                                                         |
 | ------------------------------------ | ------------------------------------------------------------ |
@@ -205,7 +205,7 @@ public class UserMapperTest {
 | `<plugins>`（插件）                  | 用于配置 MyBatis 的插件，可以拦截并修改 MyBatis 的核心行为。 |
 | `<environments>`（环境配置）         | 用于配置 MyBatis 的数据库环境，包括事务管理器和数据源的配置。 |
 | `<transactionManager>`（事物管理器） | 用于配置 MyBatis 的事务管理器。                              |
-| `<dataSource>`（数据源）             | 用于配置 MyBatis 的数据源，包括驱动、数据库URL、用户名和密码。 |
+| `<dataSource>`（数据源）             | 用于配置 MyBatis 的数据源，包括驱动、数据库 URL、用户名和密码。 |
 | `<mappers>`（映射器）                | 用于配置 MyBatis 的映射器（Mapper），即定义 SQL 语句和映射关系的接口。 |
 
 ```xml
@@ -273,15 +273,15 @@ public class UserMapperTest {
 
 ## 2.3 映射器（Mapper）文件详解
 
-### MyBatis获取参数值
+### MyBatis 获取参数值
 
-`#{}`和`${}`
+`#{}` 和 `${}`
 
-- `#{}`表示一个占位符号，`${}`表示一个拼接符号，会引用sql注入，所以**不建议使用`${}`**。
+- `#{}` 表示一个占位符号，`${}` 表示一个拼接符号，会引用 sql 注入，所以 **不建议使用 `${}`**。
 
-- 如果接收简单类型，`#{}`中可以写成value或其它名称。`${}`中只能写成value。
-- `#{}`和`${}`接收输入参数，类型可以是简单类型，pojo、hashmap。
-- `#{}`和`${}`接收pojo对象值，通过OGNL读取对象中的属性值，通过属性.属性.属性...的方式获取对象属性值。
+- 如果接收简单类型，`#{}` 中可以写成 value 或其它名称。`${}` 中只能写成 value。
+- `#{}` 和 `${}` 接收输入参数，类型可以是简单类型，pojo、hashmap。
+- `#{}` 和 `${}` 接收 pojo 对象值，通过 OGNL 读取对象中的属性值，通过属性.属性.属性...的方式获取对象属性值。
 
 ## 2.4 MyBatis 开发
 
@@ -333,7 +333,7 @@ public class UserMapperTest {
 
 ::: tip
 
-查询的标签select必须设置属性resultType或resultMap，用于设置实体类和数据库表的映射关系  
+查询的标签 select 必须设置属性 resultType 或 resultMap，用于设置实体类和数据库表的映射关系  
 - resultType：自动映射，用于属性名和表中字段名一致的情况  
 - resultMap：自定义映射，用于一对多或多对一或字段名和属性名不一致的情况  
 
@@ -380,3 +380,4 @@ User getUserById();
 @select(select * from t_user)
 List<User> getUserList();
 ```
+

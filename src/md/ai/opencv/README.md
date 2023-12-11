@@ -239,7 +239,7 @@ cv2.waitKey(0)
 
 #### 图片移位
 
-x,y是图片最终的坐标（x,y），x0，y0是图片原始坐标，∆x，∆y图片平移的大小，公式如下：
+x,y是图片最终的坐标（x,y），x~0~，y~0~是图片原始坐标，∆x，∆y图片平移的大小，公式如下：
 $$
 \left\{\begin{matrix} x = x_0+\Delta x\\y = y_0+\Delta y\end{matrix}\right.
 $$
@@ -749,7 +749,6 @@ v2=cv2.Canny(img,50,100)
 
 res = np.hstack((v1,v2)) #将图片水平堆砌
 cv_show(res,'res')
-
 ```
 
 
@@ -993,13 +992,13 @@ cv2.destroyAllWindows()
 
 ```python
 # 查看原始图片
-print (img.shape)
+print(img.shape)
 (238, 218, 3)
 
 # cv2.pyrDown() 来实现下采样
 down=cv2.pyrDown(img)
 cv_show(down,'down')
-print (down.shape) #查看下采样后的结果维度
+print(down.shape) #查看下采样后的结果维度
 (119, 109, 3)
 # 可以看到，图片变得更小了，并且图像的行和宽都是原来的一半。
 ```
@@ -1019,13 +1018,13 @@ print (down.shape) #查看下采样后的结果维度
 
 ```python
 # 查看原始图片
-print (img.shape)
+print(img.shape)
 (238, 218, 3)
 
 # cv2.pyrUP() 来实现上采样
 up=cv2.pyrUp(img)
 cv_show(up,'up')
-print (up.shape) #查看上采样后的结果维度
+print(up.shape) #查看上采样后的结果维度
 (476, 436, 3)
 # 可以看到，图片变得更大了，并且图像的行和宽都是原来的两倍
 ```
@@ -1081,9 +1080,7 @@ img = cv2.imread('lena.jpg', 0) #目标图片
 template = cv2.imread('face.jpg', 0) #要匹配的模板
 h, w = template.shape[:2] #模板的大小
 img.shape,template.shape
-
-
-((263, 263), (110, 85))
+# >> ((263, 263), (110, 85))
 
 def cv_show(img,name):
     cv2.imshow(name,img)
@@ -1117,7 +1114,7 @@ cv_show(template,'template')
 res = cv2.matchTemplate(img, template, cv2.TM_SQDIFF)
 res.shape
 
-(154, 179)
+# (154, 179)
 # 可以看到这里的维度是（154,179），验证了我们之前所介绍的内容，等于(263-110+1,263-85+1)。
 ```
 
@@ -1130,7 +1127,7 @@ res.shape
 ```python
 min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(res)
 min_val,max_val,min_loc,max_loc
-(39168.0, 74403584.0, (107, 89), (159, 62))
+# (39168.0, 74403584.0, (107, 89), (159, 62))
 ```
 
 
@@ -1140,7 +1137,7 @@ min_val,max_val,min_loc,max_loc
 `cv2.rectangle()` 函数可以根据最佳匹配位置，在原始图像上绘制一个矩形框来标记匹配位置。
 
 ```python
-ini复制代码import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
 methods = ['cv2.TM_CCOEFF', 'cv2.TM_CCOEFF_NORMED', 'cv2.TM_CCORR',
            'cv2.TM_CCORR_NORMED', 'cv2.TM_SQDIFF', 'cv2.TM_SQDIFF_NORMED']
@@ -1215,7 +1212,7 @@ plt.show()
 
 接下来我们以彩色图为例，统计每一个通道的直方图。这里要注意的是，opencv的颜色顺序是 b、g、r。
 
-```ini
+```python
 # 读取彩色图
 img = cv2.imread('yangqi.jpg') 
 
@@ -1250,7 +1247,9 @@ mask = np.zeros(img.shape[:2], np.uint8)
 print (mask.shape)
 mask[100:200, 50:150] = 255
 cv_show(mask,'mask')
-masked_img = cv2.bitwise_and(img, img, mask=mask)#掩码操作
+
+#掩码操作
+masked_img = cv2.bitwise_and(img, img, mask=mask)
 cv_show(masked_img,'masked_img')
 ```
 
@@ -1278,6 +1277,28 @@ plt.subplot(223), plt.imshow(masked_img, 'gray')
 plt.subplot(224), plt.plot(hist_full), plt.plot(hist_mask)
 plt.xlim([0, 256])
 plt.show()
+```
+
+#### 直方图均衡化
+
+```python
+# 普通直方图
+img = cv2.imread('./image/clahe.jpg',0)
+plt.hist(img.ravel(),256)
+plt.show()
+
+# 均衡化
+img = cv2.imread('./image/clahe.jpg',0)
+equ = cv2.equalizeHist(img)
+plt.hist(equ.ravel(),256)
+plt.show()
+
+# 自适应直方图均衡化
+clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8)) 
+res_clahe = clahe.apply(img)
+res = np.hstack((img,res_clahe))
+plt.figure(figsize=(15,15))
+plt_img_show(res)
 ```
 
 
@@ -1866,6 +1887,23 @@ img = cv2.rectangle(img,(x,y),(x+w,y+h),(0,255,0),2)
 cv_show(img,'img')
 ```
 
+#### 外接圆
+
+```python
+img = cv2.imread('contours.png')
+
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+ret, thresh = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY)
+binary, contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
+cnt = contours[0]
+
+(x,y),radius = cv2.minEnclosingCircle(cnt) 
+center = (int(x),int(y)) 
+radius = int(radius) 
+img = cv2.circle(img,center,radius,(0,255,0),2)
+plt_img_show(img)
+```
+
 
 
 ## 六、图像配准与拼接
@@ -1978,3 +2016,248 @@ print(hsv_blue)  # [[[120 255 255]]]
 ### 10.2 目标跟踪
 
 ### 10.3 相机标定与三维重构
+
+
+
+案例 银行卡号提取
+
+```python
+import cv2
+import matplotlib.pyplot as plt
+import numpy as np
+
+def plt_img_show(img):
+    if (len(img.shape)==3):
+        result = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)  # 需要将bgr图片转换程rgb
+        plt.imshow(result)
+    else:
+        result = img
+        plt.imshow(result,cmap='gray')
+    plt.show()
+    
+img = cv2.imread('./card-orc/images/ocr_a_reference.png')
+plt_img_show(img)
+
+
+# 灰度处理
+ref = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+# 二值处理
+ref = cv2.threshold(ref,10,255,cv2.THRESH_BINARY_INV)[1]
+plt_img_show(ref)
+
+# 找轮廓
+refCnts, hierarchy = cv2.findContours(ref.copy(),cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
+# 绘制轮廓
+res = cv2.drawContours(img.copy(),refCnts,9,(0,0,255),2)
+plt_img_show(res)
+
+
+# 排序
+refCnts = sorted(refCnts,key=lambda b: b[0][0][0])
+res = cv2.drawContours(img.copy(),refCnts,0,(0,0,255),2)
+plt_img_show(res)
+
+digits = {}
+ 
+# 遍历每一个轮廓
+for (i, c) in enumerate(refCnts):
+    # 计算外接矩形并且resize成合适大小
+    (x, y, w, h) = cv2.boundingRect(c)
+    roi = ref[y:y + h, x:x + w]
+    roi = cv2.resize(roi, (57, 88))
+    # 每一个数字对应每一个模板，此时模板中的10个数字分别被保存到了字典中
+    digits[i] = roi
+    
+# 初始化卷积核
+rectKernel = cv2.getStructuringElement(cv2.MORPH_RECT, (9, 3))
+sqKernel = cv2.getStructuringElement(cv2.MORPH_RECT, (5, 5))
+img = cv2.imread('./card-orc/images/credit_card_01.png')
+plt_img_show(img)
+
+# 统一图片大小
+set_width = 300
+rate = set_width/img.shape[1]
+image = cv2.resize(img,(0,0),fx=rate,fy=rate)
+plt_img_show(image)
+
+# 灰度处理
+gray = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
+plt_img_show(gray)
+
+#礼帽操作，突出更明亮的区域
+tophat = cv2.morphologyEx(gray,cv2.MORPH_TOPHAT,rectKernel)
+plt_img_show(tophat)
+
+gradX = cv2.Sobel(tophat, ddepth=cv2.CV_32F, dx=1, dy=0, ksize=-1)
+sobelx = cv2.convertScaleAbs(gradX)
+
+gradX = cv2.Sobel(tophat, ddepth=cv2.CV_32F, dx=1, dy=0, ksize=-1)
+gradX = np.absolute(gradX)
+(minVal, maxVal) = (np.min(gradX), np.max(gradX))
+gradX = (255 * ((gradX - minVal) / (maxVal - minVal)))
+gradX = gradX.astype("uint8")
+plt_img_show(gradX)
+
+#通过闭操作（先膨胀，再腐蚀）将数字连在一起
+gradX = cv2.morphologyEx(gradX, cv2.MORPH_CLOSE, rectKernel) 
+gradX = gradX.astype("uint8")
+plt_img_show(gradX)
+
+#THRESH_OTSU会自动寻找合适的阈值，适合双峰，需把阈值参数设置为0
+thresh = cv2.threshold(gradX, 0, 255,
+	cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1] 
+plt_img_show(thresh)
+
+threshCnts, hierarchy = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
+
+cnts = threshCnts
+cur_img = image.copy()
+cv2.drawContours(cur_img,cnts,-1,(0,0,255),2) 
+plt_img_show(cur_img)
+
+locs = []
+cntt = []
+ 
+# 遍历轮廓
+for (i, c) in enumerate(cnts):
+    # 计算矩形
+    (x, y, w, h) = cv2.boundingRect(c)
+    ar = w / float(h)
+    if ar > 2.5 and ar < 4.0:
+        # 选择合适的区域，根据实际任务来，这里的基本都是四个数字一组
+        if (w > 40 and w < 55) and (h > 10 and h < 20):
+            # 符合的留下来
+            locs.append((x, y, w, h))
+            cntt.append(c)
+# 将符合的这四组轮廓按x从左到右排序
+locs = sorted(locs, key=lambda x: x[0])
+
+
+ress = cv2.drawContours(image.copy(),cntt,-1,(0,0,255),2) 
+plt_img_show(ress)
+(gX, gY, gW, gH) = locs[1]
+# 根据坐标提取每一个组
+group = gray[gY - 5:gY + gH + 5, gX - 5:gX + gW + 5]
+
+# 预处理
+group = cv2.threshold(group, 0, 255,cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1]
+plt_img_show(group)
+
+# 计算一组的轮廓
+digitCnts,hierarchy = cv2.findContours(group.copy(), cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
+
+digitCnts = sorted(digitCnts,key=lambda b: b[0][0][0], reverse=False)
+
+group_bgr = cv2.cvtColor(group.copy(), cv2.COLOR_GRAY2BGR)
+
+res = cv2.drawContours(group_bgr.copy(),digitCnts,1,(0,255,0),2)
+plt_img_show(res)
+
+(x, y, w, h) = cv2.boundingRect(digitCnts[1])
+
+roi = group[y:y + h, x:x + w]
+plt_img_show(roi)
+
+
+# 计算匹配得分
+scores = []
+ss = digits[0]
+
+
+result = cv2.matchTemplate(roi,ss,cv2.TM_CCOEFF)
+s2 = digits[1]
+result2 = cv2.matchTemplate(roi,s2,cv2.TM_CCOEFF)
+result2
+
+sc = []
+# 在模板中计算每一个得分
+for (digit, digitROI) in digits.items():
+	# 模板匹配
+	result = cv2.matchTemplate(roi, digitROI,cv2.TM_CCOEFF)
+	(_, score, _, _) = cv2.minMaxLoc(result)
+	sc.append(score)
+np.argmax(sc)
+
+sc = []
+for (digit,digitROI) in digits.items():
+    res = cv2.matchTemplate(roi,digitROI,cv2.TM_CCOEFF)
+    sc.append(res)
+    print(res,digit)
+    
+np.argmax(sc)
+
+groupOutput = []
+for c in digitCnts:
+    # 找到当前数值的轮廓，resize成合适的的大小
+	(x, y, w, h) = cv2.boundingRect(c)
+	roi = group[y:y + h, x:x + w]
+	roi = cv2.resize(roi, (57, 88))
+	plt_img_show(roi)
+
+	# 计算匹配得分
+	scores = []
+
+	# 在模板中计算每一个得分
+	for (digit, digitROI) in digits.items():
+		# 模板匹配
+		result = cv2.matchTemplate(roi, digitROI,cv2.TM_CCOEFF)
+		(_, score, _, _) = cv2.minMaxLoc(result)
+		scores.append(score)
+
+	# 得到最合适的数字
+	groupOutput.append(str(np.argmax(scores)))
+    
+output = []
+
+# 遍历每一个轮廓中的数字
+for (i, (gX, gY, gW, gH)) in enumerate(locs):
+	# initialize the list of group digits
+	groupOutput = []
+
+	# 根据坐标提取每一个组
+	group = gray[gY - 5:gY + gH + 5, gX - 5:gX + gW + 5]
+	plt_img_show(group)
+	# 预处理
+	group = cv2.threshold(group, 0, 255,
+		cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1]
+	plt_img_show(group)
+	# 计算每一组的轮廓
+	digitCnts,hierarchy = cv2.findContours(group.copy(), cv2.RETR_EXTERNAL,
+		cv2.CHAIN_APPROX_SIMPLE)
+	digitCnts = sorted(digitCnts,key=lambda b: b[0][0][0], reverse=False)
+	# 计算每一组中的每一个数值
+	for c in digitCnts:
+		# 找到当前数值的轮廓，resize成合适的的大小
+		(x, y, w, h) = cv2.boundingRect(c)
+		roi = group[y:y + h, x:x + w]
+		roi = cv2.resize(roi, (57, 88))
+		plt_img_show(roi)
+
+		# 计算匹配得分
+		scores = []
+
+		# 在模板中计算每一个得分
+		for (digit, digitROI) in digits.items():
+			# 模板匹配
+			result = cv2.matchTemplate(roi, digitROI,
+				cv2.TM_CCOEFF)
+			(_, score, _, _) = cv2.minMaxLoc(result)
+			scores.append(score)
+
+		# 得到最合适的数字
+		groupOutput.append(str(np.argmax(scores)))
+
+	# 画出来
+	cv2.rectangle(image, (gX - 5, gY - 5),
+		(gX + gW + 5, gY + gH + 5), (0, 0, 255), 1)
+	cv2.putText(image, "".join(groupOutput), (gX, gY - 15),
+		cv2.FONT_HERSHEY_SIMPLEX, 0.65, (0, 0, 255), 2)
+
+	# 得到结果
+	output.extend(groupOutput)
+    
+
+```
+
+
+
