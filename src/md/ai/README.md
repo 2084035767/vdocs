@@ -2,11 +2,11 @@
 
 **这里涉及**ʕ·ᴥ·ʔ
 
-- Numpy
-- Panda
-- Matplotlib
-
-
+| 技术       | 衍生 |      |
+| ---------- | ---- | ---- |
+| Numpy      |      |      |
+| Panda      |      |      |
+| Matplotlib |      |      |
 
 > 计划：PyTorch—>TensorFlow
 

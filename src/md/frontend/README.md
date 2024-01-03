@@ -2,15 +2,13 @@
 
 **这里涉及**ʕ·ᴥ·ʔ
 
-- HTML
-- CSS
-  - Sass
-  - Unocss
-- JavaScript
-  - ES6
 
-- TypeScript
 
-- Node.js
-  - Express
-- vue2
+| 技术       | 衍生    |        |
+| ---------- | ------- | ------ |
+| HTML       |         |        |
+| CSS        | Sass    | Unocss |
+| JavaScript | ES6     |        |
+| TypeScript |         |        |
+| Node.js    | Express |        |
+| Vue        | Vue2    | Vue3   |

@@ -2,12 +2,11 @@
 
 **这里涉及**ʕ·ᴥ·ʔ
 
-- Docker
-- Nginx
-- Git
-- Liunx
-  - Vim
-  - Shell
-
-- Regex
+| 技术   |      |       |
+| ------ | ---- | ----- |
+| Docker |      |       |
+| Nginx  |      |       |
+| Git    |      |       |
+| Regex  |      |       |
+| Liunx  | Vim  | Shell |
 
