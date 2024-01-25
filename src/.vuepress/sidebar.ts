@@ -8,7 +8,7 @@ export default sidebar({
       text: '前端',
       children: [
         {
-          text: 'HTML 笔记',
+          text: 'HTML',
           collapsible: true,
           prefix: 'html/',
           children: [
@@ -19,7 +19,7 @@ export default sidebar({
           ],
         },
         {
-          text: 'CSS 笔记',
+          text: 'CSS',
           prefix: 'css/',
           collapsible: true,
           children: [
@@ -35,7 +35,7 @@ export default sidebar({
           ],
         },
         {
-          text: 'SASS 笔记',
+          text: 'SASS',
           prefix: 'scss/',
           collapsible: true,
           children: [
@@ -48,7 +48,7 @@ export default sidebar({
         },
 
         {
-          text: 'JS 笔记',
+          text: 'JS',
           prefix: 'js/',
           collapsible: true,
           children: [
@@ -62,7 +62,7 @@ export default sidebar({
           ],
         },
         {
-          text: 'ES6 笔记',
+          text: 'ES6',
           prefix: 'es6/',
           collapsible: true,
           children: [
@@ -80,7 +80,7 @@ export default sidebar({
           ],
         },
         {
-          text: 'TS 笔记',
+          text: 'TS',
           prefix: 'ts/',
           collapsible: true,
           children: [
@@ -91,7 +91,7 @@ export default sidebar({
           ],
         },
         {
-          text: 'Vue2 笔记',
+          text: 'Vue2',
           prefix: 'vue/',
           collapsible: true,
           children: [
@@ -107,7 +107,7 @@ export default sidebar({
           ],
         },
         {
-          text: 'Vue3 笔记',
+          text: 'Vue3',
           prefix: 'vue3/',
           collapsible: true,
           children: [
@@ -141,7 +141,7 @@ export default sidebar({
       text: '后端',
       children: [
         {
-          text: 'Java 笔记',
+          text: 'Java',
           prefix: 'java/',
           collapsible: true,
           children: [
@@ -153,7 +153,7 @@ export default sidebar({
           ],
         },
         {
-          text: 'JavaWeb 笔记',
+          text: 'JavaWeb',
           prefix: 'javaweb/',
           collapsible: true,
           children: [
@@ -169,7 +169,7 @@ export default sidebar({
           ],
         },
         {
-          text: 'Spring 笔记',
+          text: 'Spring',
           prefix: 'spring/',
           collapsible: true,
           children: [
@@ -185,7 +185,7 @@ export default sidebar({
           ],
         },
         {
-          text: 'SpringMVC 笔记',
+          text: 'SpringMVC',
           prefix: 'springmvc/',
           collapsible: true,
           children: [
@@ -201,7 +201,7 @@ export default sidebar({
           ],
         },
         {
-          text: 'Mybatis 笔记',
+          text: 'Mybatis',
           prefix: 'mybatis/',
           collapsible: true,
           children: [
@@ -233,7 +233,7 @@ export default sidebar({
         //   ],
         // },
         {
-          text: 'Python 笔记',
+          text: 'Python',
           prefix: 'python/',
           collapsible: true,
           children: [
@@ -268,7 +268,7 @@ export default sidebar({
           ],
         },
         {
-          text: 'Rust 笔记',
+          text: 'Rust',
           link: 'rust/',
           prefix: 'rust/',
           collapsible: true,
@@ -285,7 +285,7 @@ export default sidebar({
           ],
         },
         {
-          text: 'Mysql 笔记',
+          text: 'Mysql',
           prefix: 'mysql/',
           collapsible: true,
           children: [
@@ -301,7 +301,7 @@ export default sidebar({
           ],
         },
         {
-          text: 'SQL 笔记',
+          text: 'SQL',
           prefix: 'sql/',
           collapsible: true,
           children: [
@@ -325,7 +325,7 @@ export default sidebar({
       text: '工具',
       children: [
         {
-          text: 'Linux 笔记',
+          text: 'Linux',
           prefix: 'linux/',
           collapsible: true,
           children: [
@@ -341,7 +341,7 @@ export default sidebar({
           ],
         },
         {
-          text: 'Shell 笔记',
+          text: 'Shell',
           prefix: 'shell/',
           collapsible: true,
           children: [
@@ -357,7 +357,7 @@ export default sidebar({
           ],
         },
         {
-          text: 'Vim 笔记',
+          text: 'Vim',
           prefix: 'vim/',
           collapsible: true,
           children: [
@@ -373,7 +373,7 @@ export default sidebar({
           ],
         },
         {
-          text: 'Docker 笔记',
+          text: 'Docker',
           prefix: 'docker/',
           collapsible: true,
           children: [
@@ -389,7 +389,7 @@ export default sidebar({
           ],
         },
         {
-          text: 'Nginx 笔记',
+          text: 'Nginx',
           prefix: 'nginx/',
           collapsible: true,
           children: [
@@ -405,7 +405,7 @@ export default sidebar({
           ],
         },
         {
-          text: 'Git 笔记',
+          text: 'Git',
           collapsible: true,
           prefix: 'git/',
           children: [
@@ -421,7 +421,7 @@ export default sidebar({
           ],
         },
         {
-          text: 'Regex 笔记',
+          text: 'Regex',
           collapsible: true,
           prefix: 'regex/',
           children: [
@@ -445,7 +445,7 @@ export default sidebar({
       text: '人工智能',
       children: [
         {
-          text: 'Numpy 笔记',
+          text: 'Numpy',
           collapsible: true,
           prefix: 'numpy/',
           children: [
@@ -462,7 +462,7 @@ export default sidebar({
           ],
         },
         {
-          text: 'Pandas 笔记',
+          text: 'Pandas',
           collapsible: true,
           prefix: 'pandas/',
           children: [
@@ -485,7 +485,7 @@ export default sidebar({
           ],
         },
         {
-          text: 'Matplotlib 笔记',
+          text: 'Matplotlib',
           collapsible: true,
           prefix: 'matplotlib/',
           children: [
@@ -501,7 +501,7 @@ export default sidebar({
           ],
         },
         {
-          text: 'OpenCV 笔记',
+          text: 'OpenCV',
           collapsible: true,
           prefix: 'opencv/',
           children: [
@@ -595,11 +595,11 @@ export default sidebar({
           collapsible: true,
           children: [
             { text: '一、算法基础', link: 'al01.md' },
-            { text: '二、基本算法思想', link: 'al02.md' },
+            { text: '二、算法思想', link: 'al02.md' },
             { text: '三、排序算法', link: 'al03.md' },
             { text: '四、搜索算法', link: 'al04.md' },
-            { text: '五、字符串匹配算法', link: 'al05.md' },
-            // { text: '六、', link: 'al06.md' },
+            { text: '五、匹配算法', link: 'al05.md' },
+            { text: '六、算法技巧', link: 'al06.md' },
             // { text: '七、', link: 'al07.md' },
             // { text: '八、', link: 'al08.md' },
             // { text: '九、', link: 'al09.md' },

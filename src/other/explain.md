@@ -98,18 +98,6 @@ flowchart TB
     two --> c2
 ```
 
-### 卡片
-
-> 特殊推荐链接，如友链，官网，管方文档等（参考链接除外）
-
-```card
-title: Mr.Hope
-desc: Where there is light, there is hope
-logo: https://mister-hope.com/logo.svg
-link: https://mister-hope.com
-color: rgba(253, 230, 138, 0.15)
-```
-
 
 
 ### Badge

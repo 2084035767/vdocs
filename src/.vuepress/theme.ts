@@ -44,6 +44,7 @@ export default hopeTheme({
   },
 
   plugins: {
+    searchPro: true,
     copyright: {
       author: '子十',
       license: 'CC-BY-NC-SA-4.0',
@@ -51,17 +52,17 @@ export default hopeTheme({
       global: true,
     },
     mdEnhance: {
-      card: true,
       codetabs: true,
-      container: true,
+      hint: true,
+      // container: true,
       // demo: true,
       // echarts: true,
       figure: true,
       gfm: true,
       imgLazyload: true,
-      katex: true,
+      // katex: true,
       mark: true,
-      mermaid: true,
+      // mermaid: true,
       sub: true,
       sup: true,
       tabs: true,
