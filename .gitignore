@@ -1,5 +1,6 @@
 
 node_modules/
+css-tutorial-master
 src/.vuepress/.cache/
 src/.vuepress/.temp/
 src/.vuepress/dist/
